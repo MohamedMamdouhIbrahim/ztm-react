@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  // for warinings and doulble loging 
   <React.StrictMode>
-    <App />
+    {/* to enable the router features  */}
+    <BrowserRouter> 
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
