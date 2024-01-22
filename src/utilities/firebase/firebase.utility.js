@@ -8,13 +8,16 @@ import {
     signInWithPopup,
     signInWithRedirect,
     createUserWithEmailAndPassword,
-    signInWithEmailAndPassword
+    signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged
 } from "firebase/auth";
 import {
   getFirestore,
   doc,
   setDoc,
-  getDoc
+  getDoc,
+ 
 } from "firebase/firestore"
 
 // Your web app's Firebase configuration
@@ -81,3 +84,5 @@ export const signInAuthUser = async (email,password)=>{
  return await signInWithEmailAndPassword(auth,email,password);
 }
 }
+export const signOutUser = async ()=> await signOut(auth);
+export const onAuthChangeStateListener = (callback)=>onAuthStateChanged(auth,callback);

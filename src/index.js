@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { UserProvider } from './context/user.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -11,7 +12,9 @@ root.render(
   <React.StrictMode>
     {/* to enable the router features  */}
     <BrowserRouter> 
-      <App />
+      <UserProvider>
+       <App />
+      </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
