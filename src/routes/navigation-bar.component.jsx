@@ -6,12 +6,14 @@ import "./navigation.styles.scss"
 import { useContext } from "react";
 import { UserContext } from "../context/user.context";
 import { signOutUser } from "../utilities/firebase/firebase.utility";
-
+import CartIcon from "../components/cart-icon/cart-icon.component";
+import CartDropDown from "../components/cart-dropdown/card-dropdown.component";
+import { CartContext } from "../context/cart.context";
 const NavigationBar = ()=>{
     
 
    const {currentUser} = useContext(UserContext);
-
+   const {isCartOpen} = useContext(CartContext);
     
     return(
     <>
@@ -33,7 +35,9 @@ const NavigationBar = ()=>{
          (<Link className="nav-link" to="/auth">sign in </Link>)
        }
 
+       <CartIcon />
     </div>
+    {isCartOpen && <CartDropDown/>}
   </div>
   <Outlet/>
   </>

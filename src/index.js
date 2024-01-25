@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import { UserProvider } from './context/user.context';
+import { ShopProvider } from './context/shop.context';
+import CartProvider from './context/cart.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +15,11 @@ root.render(
     {/* to enable the router features  */}
     <BrowserRouter> 
       <UserProvider>
-       <App />
+        <ShopProvider>
+          <CartProvider>
+            <App />
+          </CartProvider> 
+        </ShopProvider> 
       </UserProvider>
     </BrowserRouter>
   </React.StrictMode>
